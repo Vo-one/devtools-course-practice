@@ -6,7 +6,7 @@
 
 #include "include/complex_number.h"
 
-TEST(Elistratov_Vladimir_complex_number, TEST_Substraction) {
+TEST(Elistratov_V_complex_number, TEST_Substraction) {
   ComplexNumber z1(5.0, 5.0);
   ComplexNumber z2(2.0, 3.0);
 
@@ -15,7 +15,7 @@ TEST(Elistratov_Vladimir_complex_number, TEST_Substraction) {
   EXPECT_EQ(expression, ComplexNumber(3.0, 2.0));
 }
 
-TEST(Elistratov_Vladimir_complex_number, TEST_Sum) {
+TEST(Elistratov_V_complex_number, TEST_Sum) {
   ComplexNumber z1(10.0, 0.0);
   ComplexNumber z2(0.0, 10.0);
 
@@ -24,11 +24,11 @@ TEST(Elistratov_Vladimir_complex_number, TEST_Sum) {
   EXPECT_EQ(expression, ComplexNumber(1.0, 1.0));
 }
 
-TEST(Elistratov_Vladimir_complex_number, TEST_Multiply) {
+TEST(Elistratov_V_complex_number, TEST_Multiply) {
   ComplexNumber z1(5.0, 5.0);
   ComplexNumber z2(3.0, 3.0);
 
   ComplexNumber expression = z1 * z2;
 
-  EXPECT_EQ(expression, ComplexNumber(15, 15));
+  EXPECT_EQ(expression, ComplexNumber(0, 30));
 }
