@@ -21,7 +21,7 @@ TEST(Elistratov_V_complex_number, TEST_Sum) {
 
   ComplexNumber expression = z1 + z2;
 
-  EXPECT_EQ(expression, ComplexNumber(1.0, 1.0));
+  EXPECT_EQ(expression, ComplexNumber(10.0, 10.0));
 }
 
 TEST(Elistratov_V_complex_number, TEST_Multiply) {
