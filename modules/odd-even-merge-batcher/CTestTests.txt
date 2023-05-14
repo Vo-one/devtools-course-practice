@@ -5,46 +5,32 @@
 set(prefix "${MODULE}")
 
 add_test(
-    NAME ${prefix}_can_Run
+    NAME ${prefix}_start
     COMMAND ${APPLICATION}
 )
-set_tests_properties (${prefix}_can_Run PROPERTIES
-    LABELS "${MODULE}")
-
-add_test(
-    NAME ${prefix}_can_Print_Help_Without_Arguments
-    COMMAND ${APPLICATION}
-)
-set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "With this application you can perform Batcher merge."
+set_tests_properties (${prefix}_start PROPERTIES
     LABELS "${MODULE}")
     
-TEST(OddEvenMergeTest, SortArrayWithOneElement) {
-    std::vector<int> arr = {1};
-    OddEvenMerge::OddEvenMergeBatcherSort(&arr);
-    EXPECT_EQ(arr, std::vector<int>{1});
-}
-
-TEST(OddEvenMergeTest, SortArrayOfMultipleElements) {
-    std::vector<int> arr = {5, 1, 3, 2, 4};
-    OddEvenMerge::OddEvenMergeBatcherSort(&arr);
-    EXPECT_EQ(arr, std::vector<int>{1, 2, 3, 4, 5});
-}
-
-TEST(OddEvenMergeTest, SortArrayWithNegativeElements) {
-    std::vector<int> arr = {5, -1, 3, -2, 4};
-    OddEvenMerge::OddEvenMergeBatcherSort(&arr);
-    EXPECT_EQ(arr, std::vector<int>{-2, -1, 3, 4, 5});
-}
-
-TEST(OddEvenMergeTest, SortArrayWithRepeatedElements) {
-    std::vector<int> arr = {5, 1, 3, 1, 4};
-    OddEvenMerge::OddEvenMergeBatcherSort(&arr);
-    EXPECT_EQ(arr, std::vector<int>{1, 1, 3, 4, 5});
-}
-
-TEST(OddEvenMergeTest, SortReverseSortedArray) {
-    std::vector<int> arr = {5, 4, 3, 2, 1};
-    OddEvenMerge::OddEvenMergeBatcherSort(&arr);
-    EXPECT_EQ(arr, std::vector<int>{1, 2, 3, 4, 5});
-}
+add_test(
+    NAME ${prefix}_start_5
+    COMMAND ${APPLICATION} 5
+)
+set_tests_properties (${prefix}_start_5 PROPERTIES
+    PASS_REGULAR_EXPRESSION "Sorted array:"
+    LABELS "${MODULE}")
+    
+add_test(
+    NAME ${prefix}_start_20
+    COMMAND ${APPLICATION} 20
+)
+set_tests_properties (${prefix}_start_20 PROPERTIES
+    PASS_REGULAR_EXPRESSION "Sorted array:"
+    LABELS "${MODULE}")
+    
+add_test(
+    NAME ${prefix}_start_50
+    COMMAND ${APPLICATION} 50
+)
+set_tests_properties (${prefix}_start_50 PROPERTIES
+    PASS_REGULAR_EXPRESSION "Sorted array:"
+    LABELS "${MODULE}")

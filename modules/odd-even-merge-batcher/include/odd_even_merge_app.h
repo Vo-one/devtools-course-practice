@@ -12,6 +12,8 @@ class OddEvenMergeApplication {
   std::string operator()(int argc, const char** argv);
 
  private:
+  std::string Message;
+  //bool argumentsIsValid(int argc, const char** argv);
   std::string printHelp(const std::string& programName);
 };
 
