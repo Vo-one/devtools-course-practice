@@ -13,7 +13,6 @@ class OddEvenMergeApplication {
 
  private:
   std::string Message;
-  //bool argumentsIsValid(int argc, const char** argv);
   std::string printHelp(const std::string& programName);
 };
 
